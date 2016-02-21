@@ -16,6 +16,7 @@
 
 -(void) showHUDSimple:(NSString*)txt;
 -(void) dismissHUD;
+-(void) getLocation;
 
 @property(nonatomic) CLLocationDegrees userLat;
 @property(nonatomic) CLLocationDegrees userLon;

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>App use Locations service mode Always</string>
+	<string>O aplicativo precisa usar o serviço de localização</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>App use Locations service mode In Use </string>
+	<string>O aplicativo precisa usar o serviço de localização</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

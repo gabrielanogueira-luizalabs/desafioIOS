@@ -10,12 +10,18 @@
 #import <MapKit/MapKit.h>
 #import "BaseViewController.h"
 #import "MDLWeather.h"
+#import "ListCitiesViewController.h"
 
-@interface MapViewController : BaseViewController
+@interface MapViewController : BaseViewController<MKMapViewDelegate>
+
 - (IBAction)onBtnListClick:(id)sender;
 @property (weak, nonatomic) IBOutlet MKMapView *map;
 
 @property(nonatomic) CLLocation *location;
 @property(nonatomic) NSMutableArray *listCities;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnWeatherUnit;
+- (IBAction)onBtnWeatherUnitClick:(id)sender;
+
+@property ListCitiesViewController *listViewController;
 
 @end

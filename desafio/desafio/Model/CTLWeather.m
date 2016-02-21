@@ -11,12 +11,15 @@
 #import "MDLWeather.h"
 #import <MapKit/MapKit.h>
 
+
 @implementation CTLWeather
 
+#pragma mark - Request
 - (void) doRequest:(CLLocationDegrees) latitude withLongitude:(CLLocationDegrees)longitude andCompletionHandler:(WeatherResponseBlock) responseHandler {
   
 //    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/box/city?bbox=%@&cluster=yes&appid=44db6a862fba0b067b1930da0d769e98", boundingBox]];
-    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/find?lat=%f&lon=%f&cnt=50&appid=44db6a862fba0b067b1930da0d769e98", latitude, longitude]];
+    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/find?lat=%f&lon=%f&cnt=50&lang=pt&units=%@&appid=44db6a862fba0b067b1930da0d769e98", latitude, longitude, unitCelsius]];
+    NSLog(@"%@", URL);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
@@ -26,30 +29,96 @@
     }];
 }
 
+#pragma mark - Get Cities
 - (void)getCities:(CLLocationDegrees) latitude withLongitude:(CLLocationDegrees)longitude completionHandler:(WeatherResponseBlock) responseHandler
 {
-    [self doRequest:latitude withLongitude:longitude andCompletionHandler:responseHandler];
-    [self getImages:responseHandler];
+    [self initWeatherUnit];
+
+    [self getImages:^(NSMutableArray *responseData){
+        [self doRequest:latitude withLongitude:longitude andCompletionHandler:responseHandler];
+    }];
 }
 
--(NSString*)getBoundingBox:(CLLocationDegrees)latitude withLongitude:(CLLocationDegrees)longitude{
-    CLLocationCoordinate2D center = { latitude, longitude };
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(center, 50000.0, 50000.0);
-    CLLocationCoordinate2D northWestCorner, southEastCorner;
-    northWestCorner.latitude  = center.latitude  - (region.span.latitudeDelta  / 2.0);
-    northWestCorner.longitude = center.longitude + (region.span.longitudeDelta / 2.0);
-    southEastCorner.latitude  = center.latitude  + (region.span.latitudeDelta  / 2.0);
-    southEastCorner.longitude = center.longitude - (region.span.longitudeDelta / 2.0);
-    
-    NSString *boundingBox = [NSString stringWithFormat:@"%f,%f,%f,%f", northWestCorner.latitude, southEastCorner.latitude, northWestCorner.longitude, southEastCorner.longitude];
-    
-    NSLog(@"%@", boundingBox);
-    return boundingBox;
-    
-//    [lon-left,lat-bottom,lon-right,lat-top]
+#pragma mark - WeatherUnit
+-(void)initWeatherUnit{
+    NSString *unit = [self getWeatherUnit];
+    if (unit == nil){
+        [self setWeatherUnit:unitCelsius];
+    }
 }
+
+-(NSString*)getWeatherUnit{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSString *unit = [prefs stringForKey:@"weatherUnit"];
+    return unit;
+}
+
+-(NSString*)getWeatherUnitDescription{
+    NSString *weatherUnit = [self getWeatherUnit];
+    if ([weatherUnit isEqualToString:unitCelsius]){
+        return unitCelsiusDescription;
+    } else {
+        return unitFahrenheitDescription;
+    }
+}
+
+-(void)setWeatherUnit:(NSString*)unit{
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setObject:unit forKey:@"weatherUnit"];
+}
+
+-(void)changeWeatherUnit{
+    NSString *weatherUnit = [self getWeatherUnit];
+    if ([weatherUnit isEqualToString:unitFahrenheit]){
+        [self setWeatherUnit:unitCelsius];
+    } else {
+        [self setWeatherUnit:unitFahrenheit];
+    }
+}
+
+-(NSNumber*)convertToCelsius:(NSNumber*)temperature{
+    
+    float floatTemp = [temperature floatValue];
+    floatTemp = (floatTemp - 32) / 1.8;
+    
+    return [NSNumber numberWithFloat:floatTemp];
+}
+
+-(NSNumber*)convertToFahrenheit:(NSNumber*)temperature{
+    float floatTemp = [temperature floatValue];
+    floatTemp = (floatTemp *1.8) + 32;
+    
+    return [NSNumber numberWithFloat:floatTemp];
+}
+
+-(NSMutableArray*)convertListToCelsius:(NSMutableArray*)list{
+    for (MDLWeather *weather in list){
+        weather.conditions.temperature = [self convertToCelsius: weather.conditions.temperature];
+        weather.conditions.temperatureMax = [self convertToCelsius: weather.conditions.temperatureMax];
+        weather.conditions.temperatureMin = [self convertToCelsius: weather.conditions.temperatureMin];
+    }
+    return list;
+}
+
+-(NSMutableArray*)convertListToFahrenheit:(NSMutableArray*)list{
+    for(MDLWeather *weather in list){
+        weather.conditions.temperature = [self convertToFahrenheit: weather.conditions.temperature];
+        weather.conditions.temperatureMax = [self convertToFahrenheit: weather.conditions.temperatureMax];
+        weather.conditions.temperatureMin = [self convertToFahrenheit: weather.conditions.temperatureMin];
+    }
+    
+    return list;
+}
+
+#pragma mark - Parse
 
 -(NSMutableArray*)parseJSON:(id)responseData withLatitude:(CLLocationDegrees)latide withLongitude:(CLLocationDegrees)longitude{
+    
+    BOOL convertToFahrenheit = false;
+    NSString *weatherUnit = [self getWeatherUnit];
+    if (![weatherUnit isEqualToString:unitCelsius]){
+        convertToFahrenheit = true;
+    }
     
     id listResult = [responseData objectForKey:@"list"];
     
@@ -67,9 +136,15 @@
         
         weather.conditions = [[MDLWeatherConditions alloc] init];
         id weatherCondition = [result objectForKey:@"main"];
-        weather.conditions.temperature = [weatherCondition objectForKey:@"temp"];
-        weather.conditions.temperatureMax = [weatherCondition objectForKey:@"temp_max"];
-        weather.conditions.temperatureMin = [weatherCondition objectForKey:@"temp_min"];
+        if (convertToFahrenheit){
+            weather.conditions.temperature = [self convertToFahrenheit: [weatherCondition objectForKey:@"temp"]];
+            weather.conditions.temperatureMax = [self convertToFahrenheit: [weatherCondition objectForKey:@"temp_max"]];
+            weather.conditions.temperatureMin = [self convertToFahrenheit: [weatherCondition objectForKey:@"temp_min"]];
+        } else {
+            weather.conditions.temperature = [weatherCondition objectForKey:@"temp"];
+            weather.conditions.temperatureMax = [weatherCondition objectForKey:@"temp_max"];
+            weather.conditions.temperatureMin = [weatherCondition objectForKey:@"temp_min"];
+        }
         
         weather.weather = [[MDLWeatherDetail alloc] init];
         id weatherDetailResult = [[result objectForKey:@"weather"] objectAtIndex:0];
@@ -101,6 +176,8 @@
     return [NSNumber numberWithDouble:distance/1000];
 }
 
+#pragma mark - Images
+
 -(void)getImages:(WeatherResponseBlock)responseHandler {
     
     BOOL isDir;
@@ -108,8 +185,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *imagePath = [documentsDirectory stringByAppendingPathComponent:@"/images"];
-//    if(![fileManager fileExistsAtPath:imagePath isDirectory:&isDir])
-//    {
+    if(![fileManager fileExistsAtPath:imagePath isDirectory:&isDir])
+    {
         NSArray *listImages = [NSArray arrayWithObjects:
                                @"01d",
                                @"01n",
@@ -129,15 +206,20 @@
                                @"13n",
                                @"50d",
                                @"50n", nil];
-        
-        for (NSString *image in listImages) {
-            NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", image]];
-            NSData *img = [NSData dataWithContentsOfURL:url];
-            [self saveImage:img withImageName:image];
-        }
-//    }
+        dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+            for (NSString *image in listImages) {
+                
+                NSURL *url = [NSURL URLWithString: [NSString stringWithFormat: @"http://openweathermap.org/img/w/%@.png", image]];
+                NSData *img = [NSData dataWithContentsOfURL:url];
+                [self saveImage:img withImageName:image];
+            }
+            responseHandler(nil);
+        });
+    } else {
+        responseHandler(nil);
+    }
     
-    responseHandler(nil);
+    
 }
 
 -(void)saveImage:(NSData*)imageData withImageName:(NSString*)imageName {
@@ -177,5 +259,7 @@
     UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
     return image;
 }
+
+
 
 @end

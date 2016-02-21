@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="3y8-5Y-d7x">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Desafio-->
@@ -27,7 +28,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="São Paulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0VA-MB-6IS">
-                                                    <rect key="frame" x="16" y="21" width="224" height="22"/>
+                                                    <rect key="frame" x="16" y="21" width="218" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -88,7 +89,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SES-yG-hlO">
-                                                    <rect key="frame" x="248" y="21" width="60" height="22"/>
+                                                    <rect key="frame" x="242" y="21" width="66" height="22"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -116,14 +117,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Desafio" id="wIB-sh-b8V">
-                        <barButtonItem key="rightBarButtonItem" image="ic_map.png" id="nxH-Q5-F5M">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onBtnMapClick:" destination="BYZ-38-t0r" id="RvC-6t-YzK"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ic_map.png" id="nxH-Q5-F5M">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onBtnMapClick:" destination="BYZ-38-t0r" id="dFC-Tt-GFV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="ºC" id="bpf-Tq-J3b">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onBtnWeatherUnitClick:" destination="BYZ-38-t0r" id="y6p-po-3cr"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnWeatherUnit" destination="bpf-Tq-J3b" id="jIM-jx-jzL"/>
                         <outlet property="tbvListCities" destination="yiB-Iy-JAd" id="79q-Vv-5QM"/>
                         <segue destination="dOg-Wy-bua" kind="push" id="ude-EY-TFu"/>
                     </connections>
@@ -174,14 +184,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Desafio" id="X4Q-uQ-VD8">
-                        <barButtonItem key="rightBarButtonItem" image="ic_list2.png" id="GHD-7R-i8N">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onBtnListClick:" destination="dOg-Wy-bua" id="WOx-cs-UOw"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="ic_list2.png" id="GHD-7R-i8N">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onBtnListClick:" destination="dOg-Wy-bua" id="WOx-cs-UOw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="ºC" id="jia-Ti-QFi">
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="onBtnWeatherUnitClick:" destination="dOg-Wy-bua" id="wCa-Fu-zdz"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnWeatherUnit" destination="jia-Ti-QFi" id="Lsi-Wf-iuW"/>
                         <outlet property="map" destination="xRD-cj-uqb" id="gKX-Kb-cNy"/>
                     </connections>
                 </viewController>

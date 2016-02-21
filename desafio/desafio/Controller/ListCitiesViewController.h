@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tbvListCities;
 @property (nonatomic) NSMutableArray *listCities;
 - (IBAction)onBtnMapClick:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnWeatherUnit;
+- (IBAction)onBtnWeatherUnitClick:(id)sender;
 @end
 

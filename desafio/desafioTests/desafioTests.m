@@ -7,16 +7,18 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "CTLWeather.h"
 
 @interface desafioTests : XCTestCase
 
+@property CTLWeather *ctlWeather;
 @end
 
 @implementation desafioTests
 
 - (void)setUp {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+    self.ctlWeather = [[CTLWeather alloc] init];
 }
 
 - (void)tearDown {
@@ -24,16 +26,23 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testConvertFahrenheit {
+    
+    NSNumber *result = [self.ctlWeather convertToFahrenheit:[NSNumber numberWithFloat:1]];
+    NSNumber *expected = [NSNumber numberWithFloat:33.8];
+    
+    XCTAssertEqualObjects(result, expected);
+    
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+- (void)testConvertCelsius {
+    
+    NSNumber *result = [self.ctlWeather convertToCelsius:[NSNumber numberWithFloat:5]];
+    NSNumber *expected = [NSNumber numberWithFloat:-15];
+    
+    XCTAssertEqualObjects(result, expected);
+    
 }
+
 
 @end
