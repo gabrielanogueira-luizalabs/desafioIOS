@@ -7,9 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C09441E71C7940D300FE26DA /* JGProgressHUD Resources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C09441CF1C7940D300FE26DA /* JGProgressHUD Resources.bundle */; settings = {ASSET_TAGS = (); }; };
+		C09441E81C7940D300FE26DA /* JGProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441D21C7940D300FE26DA /* JGProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		C09441E91C7940D300FE26DA /* JGProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441D41C7940D300FE26DA /* JGProgressHUDAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		C09441EA1C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441D61C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441EB1C7940D300FE26DA /* JGProgressHUDFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441D81C7940D300FE26DA /* JGProgressHUDFadeAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		C09441EC1C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441DA1C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.m */; settings = {ASSET_TAGS = (); }; };
+		C09441ED1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441DC1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441EE1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441DE1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441EF1C7940D300FE26DA /* JGProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441E01C7940D300FE26DA /* JGProgressHUDIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441F01C7940D300FE26DA /* JGProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441E21C7940D300FE26DA /* JGProgressHUDPieIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441F11C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441E41C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09441F21C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441E61C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.m */; settings = {ASSET_TAGS = (); }; };
+		C09442011C79439900FE26DA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441F51C79439900FE26DA /* AFHTTPSessionManager.m */; settings = {ASSET_TAGS = (); }; };
+		C09442021C79439900FE26DA /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441F81C79439900FE26DA /* AFNetworkReachabilityManager.m */; settings = {ASSET_TAGS = (); }; };
+		C09442031C79439900FE26DA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441FA1C79439900FE26DA /* AFSecurityPolicy.m */; settings = {ASSET_TAGS = (); }; };
+		C09442041C79439900FE26DA /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441FC1C79439900FE26DA /* AFURLRequestSerialization.m */; settings = {ASSET_TAGS = (); }; };
+		C09442051C79439900FE26DA /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = C09441FE1C79439900FE26DA /* AFURLResponseSerialization.m */; settings = {ASSET_TAGS = (); }; };
+		C09442061C79439900FE26DA /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442001C79439900FE26DA /* AFURLSessionManager.m */; settings = {ASSET_TAGS = (); }; };
+		C094420B1C794F9700FE26DA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094420A1C794F9700FE26DA /* MapKit.framework */; };
+		C094420D1C7950F000FE26DA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C094420C1C7950F000FE26DA /* CoreLocation.framework */; };
+		C094420F1C795BE300FE26DA /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C094420E1C795BE300FE26DA /* default.gpx */; settings = {ASSET_TAGS = (); }; };
+		C09442171C795F4100FE26DA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442131C795F4100FE26DA /* BaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C09442181C795F4100FE26DA /* ListCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442161C795F4100FE26DA /* ListCitiesViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C094421B1C795F9800FE26DA /* ListCitiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C094421A1C795F9800FE26DA /* ListCitiesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		C094421E1C79606100FE26DA /* CTLWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = C094421C1C79606100FE26DA /* CTLWeather.m */; settings = {ASSET_TAGS = (); }; };
+		C09442211C7963D200FE26DA /* MDLWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442201C7963D200FE26DA /* MDLWeather.m */; settings = {ASSET_TAGS = (); }; };
+		C094424D1C7968EF00FE26DA /* MDLWeatherCoordinates.m in Sources */ = {isa = PBXBuildFile; fileRef = C094424C1C7968EF00FE26DA /* MDLWeatherCoordinates.m */; settings = {ASSET_TAGS = (); }; };
+		C09442501C79691D00FE26DA /* MDLWeatherConditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C094424F1C79691D00FE26DA /* MDLWeatherConditions.m */; settings = {ASSET_TAGS = (); }; };
+		C09442531C79694400FE26DA /* MDLWeatherDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442521C79694400FE26DA /* MDLWeatherDetail.m */; settings = {ASSET_TAGS = (); }; };
+		C09442561C7A217B00FE26DA /* ic_list.png in Resources */ = {isa = PBXBuildFile; fileRef = C09442551C7A217B00FE26DA /* ic_list.png */; settings = {ASSET_TAGS = (); }; };
+		C09442581C7A21B900FE26DA /* ic_list2.png in Resources */ = {isa = PBXBuildFile; fileRef = C09442571C7A21B900FE26DA /* ic_list2.png */; settings = {ASSET_TAGS = (); }; };
+		C094425A1C7A222900FE26DA /* ic_map.png in Resources */ = {isa = PBXBuildFile; fileRef = C09442591C7A222900FE26DA /* ic_map.png */; settings = {ASSET_TAGS = (); }; };
+		C094425D1C7A228700FE26DA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C094425C1C7A228700FE26DA /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C0CE49851C793D2500635BEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE49841C793D2500635BEB /* main.m */; };
 		C0CE49881C793D2500635BEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE49871C793D2500635BEB /* AppDelegate.m */; };
-		C0CE498B1C793D2500635BEB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE498A1C793D2500635BEB /* ViewController.m */; };
 		C0CE498E1C793D2500635BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE498C1C793D2500635BEB /* Main.storyboard */; };
 		C0CE49901C793D2500635BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0CE498F1C793D2500635BEB /* Assets.xcassets */; };
 		C0CE49931C793D2500635BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE49911C793D2500635BEB /* LaunchScreen.storyboard */; };
@@ -35,12 +67,71 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C09441CF1C7940D300FE26DA /* JGProgressHUD Resources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "JGProgressHUD Resources.bundle"; sourceTree = "<group>"; };
+		C09441D01C7940D300FE26DA /* JGProgressHUD-Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JGProgressHUD-Defines.h"; sourceTree = "<group>"; };
+		C09441D11C7940D300FE26DA /* JGProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUD.h; sourceTree = "<group>"; };
+		C09441D21C7940D300FE26DA /* JGProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUD.m; sourceTree = "<group>"; };
+		C09441D31C7940D300FE26DA /* JGProgressHUDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDAnimation.h; sourceTree = "<group>"; };
+		C09441D41C7940D300FE26DA /* JGProgressHUDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDAnimation.m; sourceTree = "<group>"; };
+		C09441D51C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDErrorIndicatorView.h; sourceTree = "<group>"; };
+		C09441D61C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDErrorIndicatorView.m; sourceTree = "<group>"; };
+		C09441D71C7940D300FE26DA /* JGProgressHUDFadeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDFadeAnimation.h; sourceTree = "<group>"; };
+		C09441D81C7940D300FE26DA /* JGProgressHUDFadeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDFadeAnimation.m; sourceTree = "<group>"; };
+		C09441D91C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDFadeZoomAnimation.h; sourceTree = "<group>"; };
+		C09441DA1C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDFadeZoomAnimation.m; sourceTree = "<group>"; };
+		C09441DB1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDImageIndicatorView.h; sourceTree = "<group>"; };
+		C09441DC1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDImageIndicatorView.m; sourceTree = "<group>"; };
+		C09441DD1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDIndeterminateIndicatorView.h; sourceTree = "<group>"; };
+		C09441DE1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDIndeterminateIndicatorView.m; sourceTree = "<group>"; };
+		C09441DF1C7940D300FE26DA /* JGProgressHUDIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDIndicatorView.h; sourceTree = "<group>"; };
+		C09441E01C7940D300FE26DA /* JGProgressHUDIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDIndicatorView.m; sourceTree = "<group>"; };
+		C09441E11C7940D300FE26DA /* JGProgressHUDPieIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDPieIndicatorView.h; sourceTree = "<group>"; };
+		C09441E21C7940D300FE26DA /* JGProgressHUDPieIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDPieIndicatorView.m; sourceTree = "<group>"; };
+		C09441E31C7940D300FE26DA /* JGProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
+		C09441E41C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
+		C09441E51C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGProgressHUDSuccessIndicatorView.h; sourceTree = "<group>"; };
+		C09441E61C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGProgressHUDSuccessIndicatorView.m; sourceTree = "<group>"; };
+		C09441F41C79439900FE26DA /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		C09441F51C79439900FE26DA /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		C09441F61C79439900FE26DA /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		C09441F71C79439900FE26DA /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		C09441F81C79439900FE26DA /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		C09441F91C79439900FE26DA /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		C09441FA1C79439900FE26DA /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		C09441FB1C79439900FE26DA /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		C09441FC1C79439900FE26DA /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		C09441FD1C79439900FE26DA /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		C09441FE1C79439900FE26DA /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		C09441FF1C79439900FE26DA /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		C09442001C79439900FE26DA /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		C094420A1C794F9700FE26DA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C094420C1C7950F000FE26DA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C094420E1C795BE300FE26DA /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
+		C09442131C795F4100FE26DA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C09442141C795F4100FE26DA /* ListCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCitiesViewController.h; sourceTree = "<group>"; };
+		C09442151C795F4100FE26DA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C09442161C795F4100FE26DA /* ListCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCitiesViewController.m; sourceTree = "<group>"; };
+		C09442191C795F9800FE26DA /* ListCitiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListCitiesTableViewCell.h; sourceTree = "<group>"; };
+		C094421A1C795F9800FE26DA /* ListCitiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListCitiesTableViewCell.m; sourceTree = "<group>"; };
+		C094421C1C79606100FE26DA /* CTLWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTLWeather.m; sourceTree = "<group>"; };
+		C094421D1C79606100FE26DA /* CTLWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTLWeather.h; sourceTree = "<group>"; };
+		C094421F1C7963D200FE26DA /* MDLWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLWeather.h; sourceTree = "<group>"; };
+		C09442201C7963D200FE26DA /* MDLWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLWeather.m; sourceTree = "<group>"; };
+		C094424B1C7968EF00FE26DA /* MDLWeatherCoordinates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLWeatherCoordinates.h; sourceTree = "<group>"; };
+		C094424C1C7968EF00FE26DA /* MDLWeatherCoordinates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLWeatherCoordinates.m; sourceTree = "<group>"; };
+		C094424E1C79691D00FE26DA /* MDLWeatherConditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLWeatherConditions.h; sourceTree = "<group>"; };
+		C094424F1C79691D00FE26DA /* MDLWeatherConditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLWeatherConditions.m; sourceTree = "<group>"; };
+		C09442511C79694400FE26DA /* MDLWeatherDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDLWeatherDetail.h; sourceTree = "<group>"; };
+		C09442521C79694400FE26DA /* MDLWeatherDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDLWeatherDetail.m; sourceTree = "<group>"; };
+		C09442551C7A217B00FE26DA /* ic_list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_list.png; sourceTree = "<group>"; };
+		C09442571C7A21B900FE26DA /* ic_list2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_list2.png; sourceTree = "<group>"; };
+		C09442591C7A222900FE26DA /* ic_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_map.png; sourceTree = "<group>"; };
+		C094425B1C7A228700FE26DA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		C094425C1C7A228700FE26DA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		C0CE49801C793D2500635BEB /* desafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CE49841C793D2500635BEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0CE49861C793D2500635BEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C0CE49871C793D2500635BEB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C0CE49891C793D2500635BEB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C0CE498A1C793D2500635BEB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0CE498D1C793D2500635BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C0CE498F1C793D2500635BEB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0CE49921C793D2500635BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +149,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C094420D1C7950F000FE26DA /* CoreLocation.framework in Frameworks */,
+				C094420B1C794F9700FE26DA /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +171,113 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C09441CE1C7940D300FE26DA /* JGProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C09441CF1C7940D300FE26DA /* JGProgressHUD Resources.bundle */,
+				C09441D01C7940D300FE26DA /* JGProgressHUD-Defines.h */,
+				C09441D11C7940D300FE26DA /* JGProgressHUD.h */,
+				C09441D21C7940D300FE26DA /* JGProgressHUD.m */,
+				C09441D31C7940D300FE26DA /* JGProgressHUDAnimation.h */,
+				C09441D41C7940D300FE26DA /* JGProgressHUDAnimation.m */,
+				C09441D51C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.h */,
+				C09441D61C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.m */,
+				C09441D71C7940D300FE26DA /* JGProgressHUDFadeAnimation.h */,
+				C09441D81C7940D300FE26DA /* JGProgressHUDFadeAnimation.m */,
+				C09441D91C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.h */,
+				C09441DA1C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.m */,
+				C09441DB1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.h */,
+				C09441DC1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.m */,
+				C09441DD1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.h */,
+				C09441DE1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.m */,
+				C09441DF1C7940D300FE26DA /* JGProgressHUDIndicatorView.h */,
+				C09441E01C7940D300FE26DA /* JGProgressHUDIndicatorView.m */,
+				C09441E11C7940D300FE26DA /* JGProgressHUDPieIndicatorView.h */,
+				C09441E21C7940D300FE26DA /* JGProgressHUDPieIndicatorView.m */,
+				C09441E31C7940D300FE26DA /* JGProgressHUDRingIndicatorView.h */,
+				C09441E41C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m */,
+				C09441E51C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.h */,
+				C09441E61C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.m */,
+			);
+			path = JGProgressHUD;
+			sourceTree = "<group>";
+		};
+		C09441F31C79439900FE26DA /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				C09441F41C79439900FE26DA /* AFHTTPSessionManager.h */,
+				C09441F51C79439900FE26DA /* AFHTTPSessionManager.m */,
+				C09441F61C79439900FE26DA /* AFNetworking.h */,
+				C09441F71C79439900FE26DA /* AFNetworkReachabilityManager.h */,
+				C09441F81C79439900FE26DA /* AFNetworkReachabilityManager.m */,
+				C09441F91C79439900FE26DA /* AFSecurityPolicy.h */,
+				C09441FA1C79439900FE26DA /* AFSecurityPolicy.m */,
+				C09441FB1C79439900FE26DA /* AFURLRequestSerialization.h */,
+				C09441FC1C79439900FE26DA /* AFURLRequestSerialization.m */,
+				C09441FD1C79439900FE26DA /* AFURLResponseSerialization.h */,
+				C09441FE1C79439900FE26DA /* AFURLResponseSerialization.m */,
+				C09441FF1C79439900FE26DA /* AFURLSessionManager.h */,
+				C09442001C79439900FE26DA /* AFURLSessionManager.m */,
+			);
+			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		C09442101C795EC100FE26DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C0CE498C1C793D2500635BEB /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C09442111C795F1700FE26DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C09442151C795F4100FE26DA /* BaseViewController.h */,
+				C09442131C795F4100FE26DA /* BaseViewController.m */,
+				C09442191C795F9800FE26DA /* ListCitiesTableViewCell.h */,
+				C094421A1C795F9800FE26DA /* ListCitiesTableViewCell.m */,
+				C09442141C795F4100FE26DA /* ListCitiesViewController.h */,
+				C09442161C795F4100FE26DA /* ListCitiesViewController.m */,
+				C094425B1C7A228700FE26DA /* MapViewController.h */,
+				C094425C1C7A228700FE26DA /* MapViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C09442121C795F1D00FE26DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C094421C1C79606100FE26DA /* CTLWeather.m */,
+				C094421D1C79606100FE26DA /* CTLWeather.h */,
+				C094421F1C7963D200FE26DA /* MDLWeather.h */,
+				C09442201C7963D200FE26DA /* MDLWeather.m */,
+				C094424B1C7968EF00FE26DA /* MDLWeatherCoordinates.h */,
+				C094424C1C7968EF00FE26DA /* MDLWeatherCoordinates.m */,
+				C094424E1C79691D00FE26DA /* MDLWeatherConditions.h */,
+				C094424F1C79691D00FE26DA /* MDLWeatherConditions.m */,
+				C09442511C79694400FE26DA /* MDLWeatherDetail.h */,
+				C09442521C79694400FE26DA /* MDLWeatherDetail.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C09442541C7A217B00FE26DA /* images */ = {
+			isa = PBXGroup;
+			children = (
+				C09442591C7A222900FE26DA /* ic_map.png */,
+				C09442571C7A21B900FE26DA /* ic_list2.png */,
+				C09442551C7A217B00FE26DA /* ic_list.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		C0CE49771C793D2500635BEB = {
 			isa = PBXGroup;
 			children = (
+				C094420E1C795BE300FE26DA /* default.gpx */,
+				C094420C1C7950F000FE26DA /* CoreLocation.framework */,
+				C094420A1C794F9700FE26DA /* MapKit.framework */,
 				C0CE49821C793D2500635BEB /* desafio */,
 				C0CE499C1C793D2600635BEB /* desafioTests */,
 				C0CE49A71C793D2600635BEB /* desafioUITests */,
@@ -101,11 +298,14 @@
 		C0CE49821C793D2500635BEB /* desafio */ = {
 			isa = PBXGroup;
 			children = (
+				C09442541C7A217B00FE26DA /* images */,
+				C09441F31C79439900FE26DA /* AFNetworking */,
+				C09441CE1C7940D300FE26DA /* JGProgressHUD */,
+				C09442121C795F1D00FE26DA /* Model */,
+				C09442111C795F1700FE26DA /* Controller */,
+				C09442101C795EC100FE26DA /* View */,
 				C0CE49861C793D2500635BEB /* AppDelegate.h */,
 				C0CE49871C793D2500635BEB /* AppDelegate.m */,
-				C0CE49891C793D2500635BEB /* ViewController.h */,
-				C0CE498A1C793D2500635BEB /* ViewController.m */,
-				C0CE498C1C793D2500635BEB /* Main.storyboard */,
 				C0CE498F1C793D2500635BEB /* Assets.xcassets */,
 				C0CE49911C793D2500635BEB /* LaunchScreen.storyboard */,
 				C0CE49941C793D2500635BEB /* Info.plist */,
@@ -207,6 +407,11 @@
 				TargetAttributes = {
 					C0CE497F1C793D2500635BEB = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					C0CE49981C793D2600635BEB = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -243,9 +448,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C09441E71C7940D300FE26DA /* JGProgressHUD Resources.bundle in Resources */,
 				C0CE49931C793D2500635BEB /* LaunchScreen.storyboard in Resources */,
+				C09442581C7A21B900FE26DA /* ic_list2.png in Resources */,
 				C0CE49901C793D2500635BEB /* Assets.xcassets in Resources */,
 				C0CE498E1C793D2500635BEB /* Main.storyboard in Resources */,
+				C094420F1C795BE300FE26DA /* default.gpx in Resources */,
+				C094425A1C7A222900FE26DA /* ic_map.png in Resources */,
+				C09442561C7A217B00FE26DA /* ic_list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +480,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0CE498B1C793D2500635BEB /* ViewController.m in Sources */,
+				C09442181C795F4100FE26DA /* ListCitiesViewController.m in Sources */,
+				C09441F01C7940D300FE26DA /* JGProgressHUDPieIndicatorView.m in Sources */,
+				C09442171C795F4100FE26DA /* BaseViewController.m in Sources */,
+				C09441F21C7940D300FE26DA /* JGProgressHUDSuccessIndicatorView.m in Sources */,
+				C09441ED1C7940D300FE26DA /* JGProgressHUDImageIndicatorView.m in Sources */,
+				C09442501C79691D00FE26DA /* MDLWeatherConditions.m in Sources */,
+				C09442061C79439900FE26DA /* AFURLSessionManager.m in Sources */,
+				C094421B1C795F9800FE26DA /* ListCitiesTableViewCell.m in Sources */,
+				C09441F11C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m in Sources */,
 				C0CE49881C793D2500635BEB /* AppDelegate.m in Sources */,
+				C09442011C79439900FE26DA /* AFHTTPSessionManager.m in Sources */,
 				C0CE49851C793D2500635BEB /* main.m in Sources */,
+				C09441E91C7940D300FE26DA /* JGProgressHUDAnimation.m in Sources */,
+				C09442031C79439900FE26DA /* AFSecurityPolicy.m in Sources */,
+				C09441EA1C7940D300FE26DA /* JGProgressHUDErrorIndicatorView.m in Sources */,
+				C09442041C79439900FE26DA /* AFURLRequestSerialization.m in Sources */,
+				C09442021C79439900FE26DA /* AFNetworkReachabilityManager.m in Sources */,
+				C094424D1C7968EF00FE26DA /* MDLWeatherCoordinates.m in Sources */,
+				C09442051C79439900FE26DA /* AFURLResponseSerialization.m in Sources */,
+				C09442531C79694400FE26DA /* MDLWeatherDetail.m in Sources */,
+				C09441EE1C7940D300FE26DA /* JGProgressHUDIndeterminateIndicatorView.m in Sources */,
+				C094421E1C79606100FE26DA /* CTLWeather.m in Sources */,
+				C09441EB1C7940D300FE26DA /* JGProgressHUDFadeAnimation.m in Sources */,
+				C09442211C7963D200FE26DA /* MDLWeather.m in Sources */,
+				C09441EC1C7940D300FE26DA /* JGProgressHUDFadeZoomAnimation.m in Sources */,
+				C09441EF1C7940D300FE26DA /* JGProgressHUDIndicatorView.m in Sources */,
+				C09441E81C7940D300FE26DA /* JGProgressHUD.m in Sources */,
+				C094425D1C7A228700FE26DA /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +731,7 @@
 				C0CE49AF1C793D2600635BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0CE49B01C793D2600635BEB /* Build configuration list for PBXNativeTarget "desafioTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +740,7 @@
 				C0CE49B21C793D2600635BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C0CE49B31C793D2600635BEB /* Build configuration list for PBXNativeTarget "desafioUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +749,7 @@
 				C0CE49B51C793D2600635BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
