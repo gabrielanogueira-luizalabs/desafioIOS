@@ -52,7 +52,7 @@
 
 -(void)setDefaultZoom{
     CLLocationCoordinate2D coord = [self.location coordinate];
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coord, 10000, 10000);
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(coord, 15000, 15000);
     MKCoordinateRegion adjustedRegion = [self.map regionThatFits:viewRegion];
     [self.map setRegion:adjustedRegion animated:YES];
     self.map.showsUserLocation = YES;
@@ -81,16 +81,16 @@
 
 - (void) getData {
     
-    [self performSelectorOnMainThread:@selector(showHUDSimple:) withObject:@"Aguarde..." waitUntilDone:NO];
-    self.navigationController.navigationBar.userInteractionEnabled = FALSE;
+//    [self performSelectorOnMainThread:@selector(showHUDSimple:) withObject:@"Aguarde..." waitUntilDone:NO];
+//    self.navigationController.navigationBar.userInteractionEnabled = FALSE;
     
     CTLWeather *ctlWeather = [[CTLWeather alloc] init];
     [ctlWeather getCities:self.userLat withLongitude:self.userLon completionHandler:^(NSMutableArray *responseData){
         NSLog(@"terminou %@", responseData);
         self.listCities = responseData;
         self.listViewController.listCities = responseData;
-        [self performSelectorOnMainThread:@selector(dismissHUD) withObject:nil waitUntilDone:NO];
-        self.navigationController.navigationBar.userInteractionEnabled = TRUE;
+//        [self performSelectorOnMainThread:@selector(dismissHUD) withObject:nil waitUntilDone:NO];
+//        self.navigationController.navigationBar.userInteractionEnabled = TRUE;
         [self performSelectorOnMainThread:@selector(reloadMapMarkers) withObject:nil waitUntilDone:NO];
     }];
 }
