@@ -40,6 +40,8 @@
 		C09442581C7A21B900FE26DA /* ic_list2.png in Resources */ = {isa = PBXBuildFile; fileRef = C09442571C7A21B900FE26DA /* ic_list2.png */; settings = {ASSET_TAGS = (); }; };
 		C094425A1C7A222900FE26DA /* ic_map.png in Resources */ = {isa = PBXBuildFile; fileRef = C09442591C7A222900FE26DA /* ic_map.png */; settings = {ASSET_TAGS = (); }; };
 		C094425D1C7A228700FE26DA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C094425C1C7A228700FE26DA /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		C09442611C7A602700FE26DA /* WeatherUnitHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C09442601C7A602700FE26DA /* WeatherUnitHelper.m */; settings = {ASSET_TAGS = (); }; };
+		C0B96AA91C7A661500765A8F /* ImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B96AA81C7A661500765A8F /* ImageHelper.m */; settings = {ASSET_TAGS = (); }; };
 		C0CE49851C793D2500635BEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE49841C793D2500635BEB /* main.m */; };
 		C0CE49881C793D2500635BEB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CE49871C793D2500635BEB /* AppDelegate.m */; };
 		C0CE498E1C793D2500635BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0CE498C1C793D2500635BEB /* Main.storyboard */; };
@@ -128,6 +130,10 @@
 		C09442591C7A222900FE26DA /* ic_map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_map.png; sourceTree = "<group>"; };
 		C094425B1C7A228700FE26DA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		C094425C1C7A228700FE26DA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		C094425F1C7A602700FE26DA /* WeatherUnitHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherUnitHelper.h; sourceTree = "<group>"; };
+		C09442601C7A602700FE26DA /* WeatherUnitHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherUnitHelper.m; sourceTree = "<group>"; };
+		C0B96AA71C7A661500765A8F /* ImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHelper.h; sourceTree = "<group>"; };
+		C0B96AA81C7A661500765A8F /* ImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHelper.m; sourceTree = "<group>"; };
 		C0CE49801C793D2500635BEB /* desafio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = desafio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0CE49841C793D2500635BEB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C0CE49861C793D2500635BEB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -258,6 +264,10 @@
 				C094424F1C79691D00FE26DA /* MDLWeatherConditions.m */,
 				C09442511C79694400FE26DA /* MDLWeatherDetail.h */,
 				C09442521C79694400FE26DA /* MDLWeatherDetail.m */,
+				C094425F1C7A602700FE26DA /* WeatherUnitHelper.h */,
+				C09442601C7A602700FE26DA /* WeatherUnitHelper.m */,
+				C0B96AA71C7A661500765A8F /* ImageHelper.h */,
+				C0B96AA81C7A661500765A8F /* ImageHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -489,8 +499,10 @@
 				C09442061C79439900FE26DA /* AFURLSessionManager.m in Sources */,
 				C094421B1C795F9800FE26DA /* ListCitiesTableViewCell.m in Sources */,
 				C09441F11C7940D300FE26DA /* JGProgressHUDRingIndicatorView.m in Sources */,
+				C0B96AA91C7A661500765A8F /* ImageHelper.m in Sources */,
 				C0CE49881C793D2500635BEB /* AppDelegate.m in Sources */,
 				C09442011C79439900FE26DA /* AFHTTPSessionManager.m in Sources */,
+				C09442611C7A602700FE26DA /* WeatherUnitHelper.m in Sources */,
 				C0CE49851C793D2500635BEB /* main.m in Sources */,
 				C09441E91C7940D300FE26DA /* JGProgressHUDAnimation.m in Sources */,
 				C09442031C79439900FE26DA /* AFSecurityPolicy.m in Sources */,

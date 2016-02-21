@@ -10,8 +10,8 @@
 
 @interface ListCitiesTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *lblCityName;
 @property (weak, nonatomic) IBOutlet UIImageView *imgWeather;
+@property (weak, nonatomic) IBOutlet UILabel *lblCityName;
 @property (weak, nonatomic) IBOutlet UILabel *lblWeatherDescription;
 @property (weak, nonatomic) IBOutlet UILabel *lblTemperature;
 @property (weak, nonatomic) IBOutlet UILabel *lblTemperatureMin;

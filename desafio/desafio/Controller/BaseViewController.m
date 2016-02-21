@@ -19,18 +19,7 @@
 
 @implementation BaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma mark - Hud
 - (JGProgressHUD *)prototypeHUD {
     _style = JGProgressHUDStyleDark;
     HUD = [[JGProgressHUD alloc] initWithStyle:_style];
@@ -63,6 +52,8 @@
     [HUD dismiss];
 }
 
+#pragma mark - Location
+
 -(void)getLocation {
     
     self.locationManager = [[CLLocationManager alloc] init];
@@ -71,19 +62,15 @@
     self.locationManager.delegate = self;
     
     CLAuthorizationStatus authStatus = [CLLocationManager authorizationStatus];
-    NSLog(@"%d", authStatus);
     if (authStatus != kCLAuthorizationStatusAuthorizedAlways && [self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)] )
         [self.locationManager requestWhenInUseAuthorization];
     
     self.locationManager.distanceFilter = kCLDistanceFilterNone;
-//    [self.locationManager startMonitoringSignificantLocationChanges];
     [self.locationManager startUpdatingLocation];
 }
 
-
-
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error{
-    NSLog(@"%@", error.description);
+    NSLog(@"locationManager didFailWithError %@", error.description);
 }
 
 

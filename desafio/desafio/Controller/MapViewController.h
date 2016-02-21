@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "BaseViewController.h"
-#import "MDLWeather.h"
 #import "ListCitiesViewController.h"
+#import "MDLWeather.h"
+#import "CTLWeather.h"
+
+@class ListCitiesViewController;
 
 @interface MapViewController : BaseViewController<MKMapViewDelegate>
 
@@ -22,6 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *btnWeatherUnit;
 - (IBAction)onBtnWeatherUnitClick:(id)sender;
 
-@property ListCitiesViewController *listViewController;
+@property(nonatomic) ListCitiesViewController *listViewController;
 
 @end

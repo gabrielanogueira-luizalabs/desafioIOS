@@ -7,7 +7,7 @@
 //
 
 #import "MapViewController.h"
-#import "CTLWeather.h"
+
 
 @interface MapViewController ()
 
@@ -18,7 +18,7 @@
 #pragma mark - Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
     [self getLocation];
     [self setBtnWeatherUnit];
     self.navigationItem.hidesBackButton = YES;
@@ -26,7 +26,6 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -36,10 +35,13 @@
 #pragma mark - Map
 
 -(void)initMap{
-    CTLWeather *cltWeather = [[CTLWeather alloc] init];
-    NSString *weatherUnit = [cltWeather getWeatherUnitDescription];
     self.map.delegate = self;
-    
+    [self setMarkers];
+}
+
+-(void)setMarkers{
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
+    NSString *weatherUnit = [weatherHelper getWeatherUnitDescription];
     for (MDLWeather *weather in self.listCities){
         MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
         point.coordinate = [[[CLLocation alloc] initWithLatitude:[weather.coordinates.lat doubleValue] longitude:[weather.coordinates.lon doubleValue]] coordinate];
@@ -74,48 +76,38 @@
 
 -(void)reloadMapMarkers{
     [self.map removeAnnotations:self.map.annotations];
-    [self initMap];
+    [self setMarkers];
 }
 
 #pragma mark - GetData
 
 - (void) getData {
     
-//    [self performSelectorOnMainThread:@selector(showHUDSimple:) withObject:@"Aguarde..." waitUntilDone:NO];
-//    self.navigationController.navigationBar.userInteractionEnabled = FALSE;
-    
     CTLWeather *ctlWeather = [[CTLWeather alloc] init];
     [ctlWeather getCities:self.userLat withLongitude:self.userLon completionHandler:^(NSMutableArray *responseData){
-        NSLog(@"terminou %@", responseData);
         self.listCities = responseData;
         self.listViewController.listCities = responseData;
-//        [self performSelectorOnMainThread:@selector(dismissHUD) withObject:nil waitUntilDone:NO];
-//        self.navigationController.navigationBar.userInteractionEnabled = TRUE;
         [self performSelectorOnMainThread:@selector(reloadMapMarkers) withObject:nil waitUntilDone:NO];
     }];
 }
 
 #pragma mark - Bar Btn
 -(void)setBtnWeatherUnit{
-    CTLWeather *ctlWeather = [[CTLWeather alloc] init];
-    [ctlWeather initWeatherUnit];
-    self.btnWeatherUnit.title = [ctlWeather getWeatherUnitDescription];
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
+    [weatherHelper initWeatherUnit];
+    self.btnWeatherUnit.title = [weatherHelper getWeatherUnitDescription];
 }
 
 - (IBAction)onBtnListClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)onBtnWeatherUnitClick:(id)sender {
-    CTLWeather *cltWeather = [[CTLWeather alloc] init];
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
     
-    [cltWeather changeWeatherUnit];
+    [weatherHelper changeWeatherUnit];
     [self setBtnWeatherUnit];
     
-    if ([[cltWeather getWeatherUnit] isEqualToString:unitCelsius]){
-        self.listCities = [cltWeather convertListToCelsius:self.listCities];
-    } else {
-        self.listCities = [cltWeather convertListToFahrenheit:self.listCities];
-    }
+    self.listCities = [weatherHelper convertListToNewUnit:self.listCities];
     
     [self reloadMapMarkers];
 }

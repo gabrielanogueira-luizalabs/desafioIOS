@@ -7,9 +7,6 @@
 //
 
 #import "ListCitiesViewController.h"
-#import "ListCitiesTableViewCell.h"
-#import "MDLWeather.h"
-#import "MapViewController.h"
 
 @interface ListCitiesViewController ()
 
@@ -21,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     [self getLocation];
 }
 
@@ -29,11 +25,6 @@
     [super viewDidAppear:animated];
     [self initTableView];
     [self setBtnWeatherUnit];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -50,8 +41,9 @@
 
     CTLWeather *ctlWeather = [[CTLWeather alloc] init];
     [ctlWeather getCities:self.userLat withLongitude:self.userLon completionHandler:^(NSMutableArray *responseData){
-        NSLog(@"terminou %@", responseData);
+        
         self.listCities = responseData;
+        
         [self performSelectorOnMainThread:@selector(dismissHUD) withObject:nil waitUntilDone:NO];
         self.navigationController.navigationBar.userInteractionEnabled = TRUE;
         [self.tbvListCities performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
@@ -84,29 +76,32 @@
         cell = [[ListCitiesTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    CTLWeather *cltWeather = [[CTLWeather alloc] init];
-    NSString *weatherUnit = [cltWeather getWeatherUnitDescription];
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
+    ImageHelper *imageHelper = [[ImageHelper alloc] init];
+
     cell.lblCityName.text = weather.cityName;
-    cell.imgWeather.image = [cltWeather getUIImage:weather.weather.icon];
+    cell.imgWeather.image = [imageHelper getUIImage:weather.weather.icon];
     cell.lblWeatherDescription.text = [weather.weather.weatherDescription capitalizedString];
+
+    NSString *weatherUnit = [weatherHelper getWeatherUnitDescription];
     cell.lblTemperature.text = [NSString stringWithFormat:@"%.0f%@", [weather.conditions.temperature floatValue], weatherUnit];
     cell.lblTemperatureMin.text = [NSString stringWithFormat:@"%.0f%@", [weather.conditions.temperatureMin floatValue], weatherUnit];
     cell.lblTemperatureMax.text = [NSString stringWithFormat:@"%.0f%@", [weather.conditions.temperatureMax floatValue], weatherUnit];
+
     cell.lblDistance.text = [NSString stringWithFormat:@"%.2f Km", [weather.distance floatValue]];
+    
     return cell;
 }
 
 #pragma mark - Location
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+
     CLLocation *location = [locations lastObject];
     self.userLat = location.coordinate.latitude;
     self.userLon = location.coordinate.longitude;
     
-    NSLog(@" ----------------------------- ");
-    NSLog(@"User lat : %lf", self.userLat);
-    NSLog(@"User lon : %lf", self.userLon);
-    NSLog(@" ----------------------------- ");
+    NSLog(@"User lat : %lf lon : %lf", self.userLat, self.userLon);
     
     if (manager){
         [manager stopUpdatingLocation];
@@ -115,7 +110,6 @@
     }
     
     [self getData];
-    
 }
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
@@ -141,23 +135,18 @@
     [self.navigationController pushViewController:mapView animated:YES];
 }
 - (IBAction)onBtnWeatherUnitClick:(id)sender {
-    CTLWeather *cltWeather = [[CTLWeather alloc] init];
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
 
-    [cltWeather changeWeatherUnit];
+    [weatherHelper changeWeatherUnit];
     [self setBtnWeatherUnit];
     
-    if ([[cltWeather getWeatherUnit] isEqualToString:unitCelsius]){
-        self.listCities = [cltWeather convertListToCelsius:self.listCities];
-    } else {
-        self.listCities = [cltWeather convertListToFahrenheit:self.listCities];
-    }
-    
+    self.listCities = [weatherHelper convertListToNewUnit:self.listCities];
     [self.tbvListCities reloadData];
 }
 
 -(void)setBtnWeatherUnit{
-    CTLWeather *ctlWeather = [[CTLWeather alloc] init];
-    [ctlWeather initWeatherUnit];
-    self.btnWeatherUnit.title = [ctlWeather getWeatherUnitDescription];
+    WeatherUnitHelper *weatherHelper = [[WeatherUnitHelper alloc] init];
+    [weatherHelper initWeatherUnit];
+    self.btnWeatherUnit.title = [weatherHelper getWeatherUnitDescription];
 }
 @end
