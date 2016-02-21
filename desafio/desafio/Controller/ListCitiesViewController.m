@@ -59,6 +59,7 @@
     self.tbvListCities.dataSource = self;
     self.tbvListCities.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     [self.tbvListCities reloadData];
+    self.tbvListCities.separatorColor = [UIColor clearColor];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

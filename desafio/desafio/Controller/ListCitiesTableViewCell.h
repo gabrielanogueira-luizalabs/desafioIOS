@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblTemperatureMin;
 @property (weak, nonatomic) IBOutlet UILabel *lblTemperatureMax;
 @property (weak, nonatomic) IBOutlet UILabel *lblDistance;
+@property (weak, nonatomic) IBOutlet UIView *viewCard;
 
 @end
