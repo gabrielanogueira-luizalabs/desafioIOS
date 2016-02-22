@@ -17,7 +17,6 @@
 #pragma mark - Request
 - (void) doRequest:(CLLocationDegrees) latitude withLongitude:(CLLocationDegrees)longitude andCompletionHandler:(WeatherResponseBlock) responseHandler {
   
-//    NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/box/city?bbox=%@&cluster=yes&appid=44db6a862fba0b067b1930da0d769e98", boundingBox]];
     NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat: @"http://api.openweathermap.org/data/2.5/find?lat=%f&lon=%f&cnt=50&lang=pt&units=%@&appid=44db6a862fba0b067b1930da0d769e98", latitude, longitude, unitCelsius]];
     NSLog(@"URL: %@", URL);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -29,6 +28,7 @@
         responseHandler(listResponse);
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        responseHandler(nil);
     }];
 }
 

@@ -73,5 +73,17 @@
     NSLog(@"locationManager didFailWithError %@", error.description);
 }
 
+#pragma mark - Dialog
+
+-(void)showDialog:(NSString *)text{
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Atenção"
+                                                                   message:text
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end

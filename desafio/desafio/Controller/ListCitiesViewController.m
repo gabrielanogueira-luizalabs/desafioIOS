@@ -42,7 +42,12 @@
     CTLWeather *ctlWeather = [[CTLWeather alloc] init];
     [ctlWeather getCities:self.userLat withLongitude:self.userLon completionHandler:^(NSMutableArray *responseData){
         
-        self.listCities = responseData;
+        if(responseData == nil) {
+            [self showDialog:@"Ocorreu um erro ao obter os dados de previsão do tempo."];
+        }
+        else {
+            self.listCities = responseData;
+        }
         
         [self performSelectorOnMainThread:@selector(dismissHUD) withObject:nil waitUntilDone:NO];
         self.navigationController.navigationBar.userInteractionEnabled = TRUE;
@@ -115,14 +120,7 @@
 
 -(void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status{
     if(status == kCLAuthorizationStatusDenied){
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Atenção"
-                                                                       message:@"Não é possível obter dados sem autorização de localização  ."
-                                                                preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
-        
-        [alert addAction:defaultAction];
-        [self presentViewController:alert animated:YES completion:nil];
+        [self showDialog:@"Não é possível obter dados sem autorização de localização."];
     }
 }
 
