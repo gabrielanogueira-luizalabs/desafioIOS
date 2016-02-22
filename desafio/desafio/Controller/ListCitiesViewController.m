@@ -94,7 +94,7 @@
     cell.lblTemperatureMin.text = [NSString stringWithFormat:@"%.0f%@", [weather.conditions.temperatureMin floatValue], weatherUnit];
     cell.lblTemperatureMax.text = [NSString stringWithFormat:@"%.0f%@", [weather.conditions.temperatureMax floatValue], weatherUnit];
 
-    cell.lblDistance.text = [NSString stringWithFormat:@"%.2f Km", [weather.distance floatValue]];
+    cell.lblDistance.text = [NSString stringWithFormat:@"%.2fKm", [weather.distance floatValue]];
     
     return cell;
 }
