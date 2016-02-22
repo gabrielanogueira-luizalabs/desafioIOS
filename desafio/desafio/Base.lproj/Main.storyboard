@@ -197,7 +197,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Desafio" id="X4Q-uQ-VD8">
                         <rightBarButtonItems>
-                            <barButtonItem image="ic_list2.png" id="GHD-7R-i8N">
+                            <barButtonItem image="ic_list.png" id="GHD-7R-i8N">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="onBtnListClick:" destination="dOg-Wy-bua" id="WOx-cs-UOw"/>
@@ -222,7 +222,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_list2.png" width="24" height="24"/>
+        <image name="ic_list.png" width="24" height="24"/>
         <image name="ic_map.png" width="24" height="24"/>
     </resources>
 </document>
